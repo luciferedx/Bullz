@@ -642,7 +642,7 @@ footer {
 
 .btn-rugged {
   background: var(--accent-rugged);
-  color: var(--text-main);
+  color: var(--bg-primary);
   border: none;
   padding: 20px;
   font-family: 'Outfit', sans-serif;
