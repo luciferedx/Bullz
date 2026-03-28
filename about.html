@@ -45,6 +45,54 @@
         </div>
     </div>
 
+    <!-- Location & Access Setup -->
+    <div class="section location-section">
+        <h2 class="mb-2 text-center">Headquarters & <span class="text-accent">Access</span></h2>
+        <p class="mb-4 text-muted text-center" style="max-width: 600px; margin: 0 auto 50px auto;">Located in the heart
+            of Davao, perfectly engineered for accessibility so you have no excuses.</p>
+
+        <div class="location-grid">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=7.357097121086487,125.70716733990429"
+                target="_blank" class="maps-wrapper tilt-card"
+                style="display: block; position: relative; cursor: pointer; text-decoration: none;">
+                <!-- Overlay to make it visually obvious it's a clickable button for directions -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(5,5,5,0.4); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+                    class="map-overlay">
+                    <span class="btn" style="pointer-events: none;">Get Directions</span>
+                </div>
+                <!-- Embed Google Maps pointing to the exact coordinates. Pointer-events none ensures the click passes to the <a> tag -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15837.561498687258!2d125.7071673!3d7.3570971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1703649429188!5m2!1sen!2sph"
+                    style="pointer-events: none;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </a>
+
+            <div class="location-info">
+                <h3 class="text-accent mb-2" style="font-size: 2rem;">Find Us</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                    <strong>Address:</strong><br>
+                    Gumamela St, Purok 6, Barangay Ising, <br>
+                    Municipality of Carmen, <br>
+                    Davao del Norte, 8101
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-muted);">
+                    Only a 5-minute walk from the main terminal. Secure parking is available on-site for members
+                    exclusively.
+                </p>
+
+                <ul class="hours-list">
+                    <li>
+                        <span>Mon - Sat</span>
+                        <span>5:00 AM - 11:00 PM</span>
+                    </li>
+                    <li class="closed">
+                        <span>Sunday</span>
+                        <span>CLOSED (RECOVERY)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
     </footer>
