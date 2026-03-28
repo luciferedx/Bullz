@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans | Bull'z Fitness Gym</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Bull'z Logo" class="logo-img">
+            Bull'z <span>Gym</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="plans.html" class="active">Plans</a>
+            <a href="calendar.html">Calendar</a>
+        </div>
+    </nav>
+
+    <div class="section text-center p-heading">
+        <h1 class="mb-2">Membership <span class="text-accent">Plans</span></h1>
+        <p class="mb-4 text-muted">Select the plan that best fits your beast mode. All plans give full access to premium equipment.</p>
+        
+        <div class="pricing-toggle tilt-card" style="padding: 15px 30px; display: inline-flex; margin-bottom: 50px;">
+            <span style="font-weight: 500;">Regular Rates</span>
+            <label class="switch">
+              <input type="checkbox" id="discountToggle">
+              <span class="slider"></span>
+            </label>
+            <span style="font-weight: 500; color: var(--accent);">Student / Senior 20% OFF</span>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Plan 1 -->
+            <div class="tilt-card plan-card">
+                <h3>Weekly Pass</h3>
+                <div class="price">₱<span id="price-week" class="dynamic-price" style="font-size:inherit; font-weight:inherit; color:inherit; margin:0;">230</span><span>/ week</span></div>
+                <ul class="plan-features">
+                    <li>7 days full gym access</li>
+                    <li>Locker use included</li>
+                    <li>Free body comp analysis</li>
+                </ul>
+                <a href="#" class="btn btn-outline" style="width: 100%;">Sign Up Now</a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="tilt-card plan-card" style="border-color: rgba(255,215,0,0.5); position: relative;">
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--bg-primary); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Most Popular</div>
+                <h3>15 Days Pass</h3>
+                <div class="price">₱<span id="price-15days" class="dynamic-price" style="font-size:inherit; font-weight:inherit; color:inherit; margin:0;">550</span><span>/ 15 days</span></div>
+                <ul class="plan-features">
+                    <li>15 days full gym access</li>
+                    <li>Locker use included</li>
+                    <li>Free body comp analysis</li>
+                    <li>1 Personal Training Session</li>
+                </ul>
+                <a href="#" class="btn" style="width: 100%;">Sign Up Now</a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="tilt-card plan-card">
+                <h3>Monthly Grind</h3>
+                <div class="price">₱<span id="price-month" class="dynamic-price" style="font-size:inherit; font-weight:inherit; color:inherit; margin:0;">800</span><span>/ month</span></div>
+                <ul class="plan-features">
+                    <li>30 days full gym access</li>
+                    <li>Locker use included</li>
+                    <li>Free body comp analysis</li>
+                    <li>Guest pass (2x/month)</li>
+                </ul>
+                <a href="#" class="btn btn-outline" style="width: 100%;">Sign Up Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

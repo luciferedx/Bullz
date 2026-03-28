@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Calendar | Bull'z Fitness Gym</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Bull'z Logo" class="logo-img">
+            Bull'z <span>Gym</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="plans.html">Plans</a>
+            <a href="calendar.html" class="active">Calendar</a>
+        </div>
+    </nav>
+
+    <div class="section text-center p-heading">
+        <h1 class="mb-2">Gym <span class="text-accent">Schedule</span></h1>
+        <p class="mb-4 text-muted">View our available time slots and specialized training sessions for the week.</p>
+        
+        <div class="calendar-container tilt-card">
+            <div class="calendar-header">
+                <button class="btn btn-outline" style="padding: 5px 15px;">&larr; Prev Week</button>
+                <h3 style="margin: 0;">March 2026</h3>
+                <button class="btn btn-outline" style="padding: 5px 15px;">Next Week &rarr;</button>
+            </div>
+
+            <div class="calendar-grid">
+                <!-- Headers -->
+                <div class="calendar-day-header">Mon</div>
+                <div class="calendar-day-header">Tue</div>
+                <div class="calendar-day-header">Wed</div>
+                <div class="calendar-day-header">Thu</div>
+                <div class="calendar-day-header">Fri</div>
+                <div class="calendar-day-header">Sat</div>
+                <div class="calendar-day-header">Sun</div>
+
+                <!-- Days Data Row 1 -->
+                <div class="calendar-day"><span class="date">23</span><div class="calendar-event">6AM HIIT</div><div class="calendar-event" style="background:#555;">5PM Powerlifting</div></div>
+                <div class="calendar-day"><span class="date">24</span><div class="calendar-event">7AM Yoga</div></div>
+                <div class="calendar-day"><span class="date">25</span><div class="calendar-event">6AM HIIT</div><div class="calendar-event" style="background:#a62b2b;">6PM Boxing</div></div>
+                <div class="calendar-day"><span class="date">26</span><div class="calendar-event">5PM Powerlifting</div></div>
+                <div class="calendar-day"><span class="date">27</span><div class="calendar-event">6AM HIIT</div><div class="calendar-event" style="background:#a62b2b;">6PM Boxing</div></div>
+                <div class="calendar-day" style="border: 1px solid var(--accent);"><span class="date text-accent">28</span><div class="calendar-event" style="background:#555;">9AM Open Gym</div></div>
+                <div class="calendar-day"><span class="date">29</span><div class="calendar-event" style="background:#555;">9AM Open Gym</div></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
