@@ -385,13 +385,10 @@ input:checked + .slider:before {
 }
 
 .plan-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   margin-bottom: 10px;
   color: var(--text-muted);
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  white-space: nowrap;
 }
 
 .plan-card .price {
