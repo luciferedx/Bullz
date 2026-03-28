@@ -590,8 +590,8 @@ footer {
 .free-trial-section {
   background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
   position: relative;
-  border-top: 3px solid var(--accent-rugged);
-  border-bottom: 3px solid var(--accent-rugged);
+  border-top: 1px solid var(--accent-rugged);
+  border-bottom: 1px solid var(--accent-rugged);
 }
 
 .form-rugged {
