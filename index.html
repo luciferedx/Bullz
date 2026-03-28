@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -36,21 +40,26 @@
     <div class="section hero">
         <div class="hero-content tilt-card">
             <h1 class="text-accent">Unleash The Beast Within</h1>
-            <p>Welcome to Bull'z Fitness Gym. Premium equipment, expert guidance, and an environment built for transformation. Your journey to peak performance starts right here.</p>
+            <p>Welcome to Bull'z Fitness Gym. Premium equipment, expert guidance, and an environment built for
+                transformation. Your journey to peak performance starts right here.</p>
             <div class="hero-btns" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                 <a href="plans.html" class="btn">Join Now</a>
                 <a href="about.html" class="btn btn-outline">Our Origins</a>
             </div>
         </div>
         <!-- Background decorative element -->
-        <div style="position: absolute; top: -20%; right: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, rgba(0,0,0,0) 70%); z-index: 1; pointer-events: none;"></div>
+        <div
+            style="position: absolute; top: -20%; right: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, rgba(0,0,0,0) 70%); z-index: 1; pointer-events: none;">
+        </div>
     </div>
 
     <!-- Motivation & Features Section -->
     <div class="section text-center">
         <h2 class="mb-2">Beyond <span class="text-accent">Limits</span></h2>
-        <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">At Bull'z Gym, we don't just provide equipment. We provide an environment forged for champions, designed to push you past your breaking point.</p>
-        
+        <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">At Bull'z Gym, we don't just
+            provide equipment. We provide an environment forged for champions, designed to push you past your breaking
+            point.</p>
+
         <div class="features-grid">
             <div class="feature-card tilt-card">
                 <h3 class="text-accent mb-2">Premium Gear</h3>
@@ -68,10 +77,13 @@
     </div>
 
     <!-- 1-On-1 Coaching CTA -->
-    <div class="section coaching-section" style="padding: 60px 10%; background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-top: 1px solid rgba(255,215,0,0.1); border-bottom: 1px solid rgba(255,215,0,0.1);">
+    <div class="section coaching-section"
+        style="padding: 60px 10%; background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-top: 1px solid rgba(255,215,0,0.1); border-bottom: 1px solid rgba(255,215,0,0.1);">
         <div class="coaching-content tilt-card" style="max-width: 800px; margin: 0 auto; text-align: center;">
             <h2 class="mb-2">Need a <span class="text-accent">Coach</span>?</h2>
-            <p class="mb-4 text-muted" style="font-size: 1.1rem; line-height: 1.8;">Skip the guesswork. Our elite personal trainers will design a custom workout split and dietary plan to ensure you reach your goals safely and faster than you thought possible.</p>
+            <p class="mb-4 text-muted" style="font-size: 1.1rem; line-height: 1.8;">Skip the guesswork. Our elite
+                personal trainers will design a custom workout split and dietary plan to ensure you reach your goals
+                safely and faster than you thought possible.</p>
             <a href="plans.html" class="btn">Hire a Personal Trainer</a>
         </div>
     </div>
@@ -79,8 +91,9 @@
     <!-- Fitness Planner (Calorie Calculator) -->
     <div class="section text-center planner-section">
         <h2 class="mb-2">Nutrition <span class="text-accent">Planner</span></h2>
-        <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">Your body is built in the kitchen. Input your stats below to calculate your required daily caloric intake for cutting or bulking.</p>
-        
+        <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">Your body is built in the
+            kitchen. Input your stats below to calculate your required daily caloric intake for cutting or bulking.</p>
+
         <div class="planner-card tilt-card" style="max-width: 800px; margin: 0 auto; text-align: left;">
             <form id="calorieForm" class="planner-form">
                 <div class="form-group">
@@ -120,23 +133,28 @@
                         <option value="gain">Gain Muscle (Caloric Surplus +500)</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-outline" style="grid-column: 1 / -1; margin-top: 20px; width: 100%;">Calculate My Macros</button>
+                <button type="submit" class="btn btn-outline"
+                    style="grid-column: 1 / -1; margin-top: 20px; width: 100%;">Calculate My Macros</button>
             </form>
 
             <div id="plannerResults" class="planner-results prescription-card" style="display: none;">
                 <h3 class="mb-2" style="color: var(--text-muted); font-size: 1.2rem;">Daily Calorie Target Output</h3>
                 <span id="result-calories" class="target-score">2500</span>
-                <span style="font-size: 1.2rem; color: var(--text-muted); display: block; margin-bottom: 20px;">KCAL / DAY</span>
-                <p id="result-message" style="color: var(--text-main); font-weight: 600;">This is an estimate based on your Body Metabolic Rate and activity level. Stick to this target daily to reach your goal!</p>
+                <span style="font-size: 1.2rem; color: var(--text-muted); display: block; margin-bottom: 20px;">KCAL /
+                    DAY</span>
+                <p id="result-message" style="color: var(--text-main); font-weight: 600;">This is an estimate based on
+                    your Body Metabolic Rate and activity level. Stick to this target daily to reach your goal!</p>
             </div>
         </div>
     </div>
 
     <!-- Free Trial Lead Gen -->
     <div class="section text-center free-trial-section">
-        <h2 class="mb-2" style="color: var(--text-main);">Claim Your <span style="color: var(--accent-rugged);">Free 1-Day Beast Pass</span></h2>
-        <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">Experience the unmatched energy of Bull'z Gym for a full day. Enter your details below to instantly claim your pass.</p>
-        
+        <h2 class="mb-2" style="color: var(--text-main);">Claim Your <span style="color: var(--accent-rugged);">Free
+                1-Day Beast Pass</span></h2>
+        <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">Experience the unmatched energy
+            of Bull'z Gym for a full day. Enter your details below to instantly claim your pass.</p>
+
         <div class="form-rugged tilt-card" style="border-radius: 4px;">
             <form id="freeTrialForm">
                 <div class="form-group-rugged">
@@ -165,28 +183,35 @@
     <!-- Location & Access Setup -->
     <div class="section location-section">
         <h2 class="mb-2 text-center">Headquarters & <span class="text-accent">Access</span></h2>
-        <p class="mb-4 text-muted text-center" style="max-width: 600px; margin: 0 auto 50px auto;">Located in the heart of Davao, perfectly engineered for accessibility so you have no excuses.</p>
+        <p class="mb-4 text-muted text-center" style="max-width: 600px; margin: 0 auto 50px auto;">Located in the heart
+            of Davao, perfectly engineered for accessibility so you have no excuses.</p>
 
         <div class="location-grid">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=7.357097121086487,125.70716733990429" target="_blank" class="maps-wrapper tilt-card" style="display: block; position: relative; cursor: pointer; text-decoration: none;">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=7.357097121086487,125.70716733990429"
+                target="_blank" class="maps-wrapper tilt-card"
+                style="display: block; position: relative; cursor: pointer; text-decoration: none;">
                 <!-- Overlay to make it visually obvious it's a clickable button for directions -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(5,5,5,0.4); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" class="map-overlay">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(5,5,5,0.4); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+                    class="map-overlay">
                     <span class="btn" style="pointer-events: none;">Get Directions</span>
                 </div>
                 <!-- Embed Google Maps pointing to the exact coordinates. Pointer-events none ensures the click passes to the <a> tag -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15837.561498687258!2d125.7071673!3d7.3570971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1703649429188!5m2!1sen!2sph" style="pointer-events: none;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15837.561498687258!2d125.7071673!3d7.3570971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1703649429188!5m2!1sen!2sph"
+                    style="pointer-events: none;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </a>
-            
+
             <div class="location-info">
                 <h3 class="text-accent mb-2" style="font-size: 2rem;">Find Us</h3>
                 <p style="font-size: 1.1rem; margin-bottom: 20px;">
                     <strong>Address:</strong><br>
-                    J.P. Laurel Ave, Bajada<br>
-                    (Near Gaisano Mall of Davao)<br>
-                    Davao City, 8000
+                    Gumamela St, Purok 6, Barangay Ising, <br>
+                    Municipality of Carmen, <br>
+                    Davao del Norte, 8101
                 </p>
                 <p style="font-size: 1.1rem; color: var(--text-muted);">
-                    Only a 5-minute walk from the main terminal. Secure parking is available on-site for members exclusively.
+                    Only a 5-minute walk from the main terminal. Secure parking is available on-site for members
+                    exclusively.
                 </p>
 
                 <ul class="hours-list">
@@ -210,4 +235,5 @@
     <!-- Custom JS Document -->
     <script src="script.js"></script>
 </body>
+
 </html>
