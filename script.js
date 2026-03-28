@@ -2,60 +2,75 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // 0. Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
     // 1. Custom Cursor Creation
-    const cursorDot = document.createElement('div');
-    cursorDot.classList.add('cursor-dot');
-    document.body.appendChild(cursorDot);
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    
+    if (!isTouchDevice) {
+        const cursorDot = document.createElement('div');
+        cursorDot.classList.add('cursor-dot');
+        document.body.appendChild(cursorDot);
 
-    const cursorOutline = document.createElement('div');
-    cursorOutline.classList.add('cursor-outline');
-    document.body.appendChild(cursorOutline);
+        const cursorOutline = document.createElement('div');
+        cursorOutline.classList.add('cursor-outline');
+        document.body.appendChild(cursorOutline);
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let outlineX = 0;
-    let outlineY = 0;
+        let mouseX = 0;
+        let mouseY = 0;
+        let outlineX = 0;
+        let outlineY = 0;
 
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        // Dot follows instantly
-        cursorDot.style.left = `${mouseX}px`;
-        cursorDot.style.top = `${mouseY}px`;
-    });
-
-    // Animate outline with delay for smooth trailing effect
-    const animateCursor = () => {
-        let distX = mouseX - outlineX;
-        let distY = mouseY - outlineY;
-        
-        outlineX += distX * 0.15;
-        outlineY += distY * 0.15;
-
-        cursorOutline.style.left = `${outlineX}px`;
-        cursorOutline.style.top = `${outlineY}px`;
-
-        requestAnimationFrame(animateCursor);
-    };
-    animateCursor();
-
-    // Hover state for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, input, .tilt-card, .calendar-day');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            document.body.classList.add('cursor-hover');
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Dot follows instantly
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
         });
-        el.addEventListener('mouseleave', () => {
-            document.body.classList.remove('cursor-hover');
+
+        // Animate outline with delay for smooth trailing effect
+        const animateCursor = () => {
+            let distX = mouseX - outlineX;
+            let distY = mouseY - outlineY;
+            
+            outlineX += distX * 0.15;
+            outlineY += distY * 0.15;
+
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+
+            requestAnimationFrame(animateCursor);
+        };
+        animateCursor();
+
+        // Hover state for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, input, .tilt-card, .calendar-day');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-hover');
+            });
         });
-    });
+    }
 
     // 2. 3D Tilt Effect for specific cards
     const tiltCards = document.querySelectorAll('.tilt-card');
     
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
+            if (isTouchDevice) return;
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left; // x position within the element
             const y = e.clientY - rect.top;  // y position within the element
