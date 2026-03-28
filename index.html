@@ -123,9 +123,82 @@
                 <button type="submit" class="btn btn-outline" style="grid-column: 1 / -1; margin-top: 20px; width: 100%;">Calculate My Macros</button>
             </form>
 
-            <div id="plannerResults" class="planner-results" style="display: none; text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <h3 class="mb-2">Your Daily Target: <span id="result-calories" class="text-accent" style="font-size: 2.5rem; display: block; margin: 10px 0;">2500</span> <span style="font-size: 1rem; color: var(--text-muted);">kcal</span></h3>
-                <p id="result-message" class="text-muted">This is an estimate based on your Body Metabolic Rate and activity level. Stick to this target daily to reach your goal!</p>
+            <div id="plannerResults" class="planner-results prescription-card" style="display: none;">
+                <h3 class="mb-2" style="color: var(--text-muted); font-size: 1.2rem;">Daily Calorie Target Output</h3>
+                <span id="result-calories" class="target-score">2500</span>
+                <span style="font-size: 1.2rem; color: var(--text-muted); display: block; margin-bottom: 20px;">KCAL / DAY</span>
+                <p id="result-message" style="color: var(--text-main); font-weight: 600;">This is an estimate based on your Body Metabolic Rate and activity level. Stick to this target daily to reach your goal!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Trial Lead Gen -->
+    <div class="section text-center free-trial-section">
+        <h2 class="mb-2" style="color: var(--text-main);">Claim Your <span style="color: var(--accent-rugged);">Free 1-Day Beast Pass</span></h2>
+        <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">Experience the unmatched energy of Bull'z Gym for a full day. Enter your details below to instantly claim your pass.</p>
+        
+        <div class="form-rugged tilt-card" style="border-radius: 4px;">
+            <form id="freeTrialForm">
+                <div class="form-group-rugged">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="form-group-rugged">
+                    <label>Phone Number (WhatsApp/Viber)</label>
+                    <input type="tel" placeholder="+63 9XX XXX XXXX" required>
+                </div>
+                <div class="form-group-rugged">
+                    <label>Current Fitness Goal</label>
+                    <select required>
+                        <option value="" disabled selected>Select Your Primary Goal</option>
+                        <option value="gain">Build Muscle / Bulk Up</option>
+                        <option value="lose">Lose Fat / Shred</option>
+                        <option value="strength">Increase Strength / Power</option>
+                        <option value="endurance">General Fitness & Endurance</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-rugged">Claim My Free Pass Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Location & Access Setup -->
+    <div class="section location-section">
+        <h2 class="mb-2 text-center">Headquarters & <span class="text-accent">Access</span></h2>
+        <p class="mb-4 text-muted text-center" style="max-width: 600px; margin: 0 auto 50px auto;">Located in the heart of Davao, perfectly engineered for accessibility so you have no excuses.</p>
+
+        <div class="location-grid">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=7.357097121086487,125.70716733990429" target="_blank" class="maps-wrapper tilt-card" style="display: block; position: relative; cursor: pointer; text-decoration: none;">
+                <!-- Overlay to make it visually obvious it's a clickable button for directions -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(5,5,5,0.4); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" class="map-overlay">
+                    <span class="btn" style="pointer-events: none;">Get Directions</span>
+                </div>
+                <!-- Embed Google Maps pointing to the exact coordinates. Pointer-events none ensures the click passes to the <a> tag -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15837.561498687258!2d125.7071673!3d7.3570971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1703649429188!5m2!1sen!2sph" style="pointer-events: none;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </a>
+            
+            <div class="location-info">
+                <h3 class="text-accent mb-2" style="font-size: 2rem;">Find Us</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                    <strong>Address:</strong><br>
+                    J.P. Laurel Ave, Bajada<br>
+                    (Near Gaisano Mall of Davao)<br>
+                    Davao City, 8000
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-muted);">
+                    Only a 5-minute walk from the main terminal. Secure parking is available on-site for members exclusively.
+                </p>
+
+                <ul class="hours-list">
+                    <li>
+                        <span>Mon - Sat</span>
+                        <span>5:00 AM - 11:00 PM</span>
+                    </li>
+                    <li class="closed">
+                        <span>Sunday</span>
+                        <span>CLOSED (RECOVERY)</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

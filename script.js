@@ -2,6 +2,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Sticky Navbar Scroll State
+    const nav = document.querySelector('nav');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    }
+
     // 0. Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -168,6 +180,27 @@ document.addEventListener('DOMContentLoaded', () => {
             // Animate display
             resultDiv.style.display = 'block';
             
+        });
+    }
+
+    // 5. Free Trial Form
+    const freeTrialForm = document.getElementById('freeTrialForm');
+    if (freeTrialForm) {
+        freeTrialForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = freeTrialForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = 'PASS SECURED! 🤘';
+            btn.style.background = '#FFD700';
+            btn.style.color = '#000';
+            btn.style.boxShadow = '0 10px 20px rgba(255, 215, 0, 0.4)';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.style.boxShadow = '';
+                freeTrialForm.reset();
+            }, 3000);
         });
     }
 
