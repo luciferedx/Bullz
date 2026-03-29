@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Custom Cursor Creation
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-    
+
     if (!isTouchDevice) {
         const cursorDot = document.createElement('div');
         cursorDot.classList.add('cursor-dot');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
+
             // Dot follows instantly
             cursorDot.style.left = `${mouseX}px`;
             cursorDot.style.top = `${mouseY}px`;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const animateCursor = () => {
             let distX = mouseX - outlineX;
             let distY = mouseY - outlineY;
-            
+
             outlineX += distX * 0.15;
             outlineY += distY * 0.15;
 
@@ -79,21 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. 3D Tilt Effect for specific cards
     const tiltCards = document.querySelectorAll('.tilt-card');
-    
+
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             if (isTouchDevice) return;
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left; // x position within the element
             const y = e.clientY - rect.top;  // y position within the element
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             // Calculate rotation (max 10 degrees)
             const rotateX = ((y - centerY) / centerY) * -10;
             const rotateY = ((x - centerX) / centerX) * 10;
-            
+
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
         });
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const discountToggle = document.getElementById('discountToggle');
     if (discountToggle) {
         const prices = document.querySelectorAll('.dynamic-price');
-        
+
         // Base prices setup
         const perWeekBase = 230;
         const per15DaysBase = 550;
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('price-week').innerText = Math.round(perWeekBase * multiplier);
             document.getElementById('price-15days').innerText = Math.round(per15DaysBase * multiplier);
             document.getElementById('price-month').innerText = Math.round(perMonthBase * multiplier);
-            
+
             // Add a little pop animation when price changes
             prices.forEach(price => {
                 price.parentElement.parentElement.style.transform = 'scale(1.05)';
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const resultMsg = document.getElementById('result-message');
 
             resultCalories.innerText = Math.round(targetCalories);
-            
+
             if (goal === 'lose') {
                 resultMsg.innerText = "This target puts you in a 500 kcal deficit. Stick to this to responsibly lose around 0.5kg/week.";
             } else if (goal === 'gain') {
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Animate display
             resultDiv.style.display = 'block';
-            
+
         });
     }
 
@@ -207,45 +207,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Plan Enrollment Modal Logic
     const signupTriggers = document.querySelectorAll('.signup-trigger');
     const enrollmentModal = document.getElementById('enrollmentModal');
-    
+
     if (enrollmentModal && signupTriggers.length > 0) {
         const closeModal = document.getElementById('closeModal');
         const modalPlanName = document.getElementById('modalPlanName');
         const modalPlanPrice = document.getElementById('modalPlanPrice');
         const hiddenPlanName = document.getElementById('hiddenPlanName');
         const hiddenPlanPrice = document.getElementById('hiddenPlanPrice');
-        
+
         // Open Modal and Populate Data
         signupTriggers.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const planName = btn.getAttribute('data-plan');
-                
+
                 // Traverse DOM to find the specific price element within the same card
                 const card = btn.closest('.plan-card');
                 const priceElement = card.querySelector('.price');
                 const priceValue = priceElement.innerText.trim();
-                
+
                 // Update UI
                 modalPlanName.innerText = planName;
                 modalPlanPrice.innerText = priceValue;
-                
+
                 // Update Hidden Inputs for Formspree
                 hiddenPlanName.value = planName;
                 hiddenPlanPrice.value = priceValue;
-                
+
                 // Show Modal
                 enrollmentModal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
             });
         });
-        
+
         // Close Modal via X button
         closeModal.addEventListener('click', () => {
             enrollmentModal.classList.remove('active');
             document.body.style.overflow = '';
         });
-        
+
         // Close Modal via clicking outside
         enrollmentModal.addEventListener('click', (e) => {
             if (e.target === enrollmentModal) {
@@ -260,11 +260,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (enrollmentForm) {
             enrollmentForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
+
                 const btn = enrollmentForm.querySelector('button[type="submit"]');
                 const originalText = btn.innerText;
                 btn.innerText = 'PROCESSING...';
-                
+
                 const data = new FormData(enrollmentForm);
 
                 try {
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         btn.style.background = '#FFD700';
                         btn.style.color = '#000';
                         btn.style.boxShadow = '0 10px 20px rgba(255, 215, 0, 0.4)';
-                        
+
                         setTimeout(() => {
                             btn.innerText = originalText;
                             btn.style.background = '';
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             btn.style.boxShadow = '';
                             enrollmentForm.reset();
                             const modalToClose = document.getElementById('enrollmentModal');
-                            if(modalToClose) {
+                            if (modalToClose) {
                                 modalToClose.classList.remove('active');
                             }
                             document.body.style.overflow = '';
@@ -304,6 +304,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+    }
+
+    // 7. Smooth Scrolling
+    document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Offset for fixed navbar
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // 8. Coach Modal Logic
+    const coachModalTrigger = document.getElementById('coachModalTrigger');
+    const coachModal = document.getElementById('coachModal');
+    if (coachModalTrigger && coachModal) {
+        const closeCoachModal = document.getElementById('closeCoachModal');
+
+        coachModalTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            coachModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeCoachModal.addEventListener('click', () => {
+            coachModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        coachModal.addEventListener('click', (e) => {
+            if (e.target === coachModal) {
+                coachModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        //test
+    }
+
+    // 9. Global Loading Screen Logic
+    const loader = document.getElementById('global-loader');
+    if (loader) {
+        document.body.style.overflow = 'hidden'; // Prevent scrolling during load
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            document.body.style.overflow = '';
+
+            // Remove completely from DOM after fade to prevent interaction blocking
+            setTimeout(() => {
+                const l = document.getElementById('global-loader');
+                if (l) l.remove();
+            }, 600);
+        }, 1200);
     }
 
 });
