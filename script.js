@@ -306,4 +306,63 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // 7. Smooth Scrolling
+    document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Offset for fixed navbar
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // 8. Coach Modal Logic
+    const coachModalTrigger = document.getElementById('coachModalTrigger');
+    const coachModal = document.getElementById('coachModal');
+    if (coachModalTrigger && coachModal) {
+        const closeCoachModal = document.getElementById('closeCoachModal');
+        
+        coachModalTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            coachModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeCoachModal.addEventListener('click', () => {
+            coachModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        coachModal.addEventListener('click', (e) => {
+            if (e.target === coachModal) {
+                coachModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+    }
+
+    // 9. Global Loading Screen Logic
+    const loader = document.getElementById('global-loader');
+    if (loader) {
+        document.body.style.overflow = 'hidden'; // Prevent scrolling during load
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            document.body.style.overflow = '';
+            
+            // Remove completely from DOM after fade to prevent interaction blocking
+            setTimeout(() => {
+                const l = document.getElementById('global-loader');
+                if(l) l.remove();
+            }, 600);
+        }, 1200);
+    }
+
 });

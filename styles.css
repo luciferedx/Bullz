@@ -832,6 +832,50 @@ footer {
 .modal-close:hover {
   color: var(--accent);
 }
+/* Global Loading Screen */
+#global-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.5s;
+  opacity: 1;
+  visibility: visible;
+}
+
+#global-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dumbbell-icon {
+  width: 120px;
+  height: 60px;
+}
+
+.dumbbell-outline {
+  fill: none;
+  stroke: var(--accent-rugged);
+  stroke-width: 3;
+}
+
+.fill-rect {
+  animation: fillBar 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  width: 0;
+  height: 100%;
+  fill: var(--accent);
+}
+
+@keyframes fillBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
 
 /* Responsive */
 @media (max-width: 900px) {

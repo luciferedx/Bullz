@@ -16,7 +16,18 @@
 </head>
 
 <body>
-
+    <!-- Global Loading Screen -->
+    <div id="global-loader">
+        <svg class="dumbbell-icon" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+            <clipPath id="dumbellClip">
+                <path d="M10,10 L30,10 L30,15 L70,15 L70,10 L90,10 L90,30 L70,30 L70,25 L30,25 L30,30 L10,30 Z" />
+            </clipPath>
+            <path class="dumbbell-outline" d="M10,10 L30,10 L30,15 L70,15 L70,10 L90,10 L90,30 L70,30 L70,25 L30,25 L30,30 L10,30 Z" />
+            <g clip-path="url(#dumbellClip)">
+                <rect x="0" y="0" class="fill-rect" />
+            </g>
+        </svg>
+    </div>
     <!-- Navigation -->
     <nav>
         <a href="index.html" class="logo">
@@ -75,6 +86,10 @@
                 <p>Train alongside like-minded individuals driven by discipline and grit.</p>
             </div>
         </div>
+        
+        <div style="margin-top: 50px;">
+            <a href="#nutrition-planner" class="btn btn-outline smooth-scroll">Nutrition Planner</a>
+        </div>
     </div>
 
     <!-- 1-On-1 Coaching CTA -->
@@ -85,12 +100,12 @@
             <p class="mb-4 text-muted" style="font-size: 1.1rem; line-height: 1.8;">Skip the guesswork. Our elite
                 personal trainers will design a custom workout split and dietary plan to ensure you reach your goals
                 safely and faster than you thought possible.</p>
-            <a href="plans.html" class="btn">Hire a Personal Trainer</a>
+            <a href="#" class="btn" id="coachModalTrigger">Hire a Personal Trainer</a>
         </div>
     </div>
 
     <!-- Fitness Planner (Calorie Calculator) -->
-    <div class="section text-center planner-section">
+    <div id="nutrition-planner" class="section text-center planner-section">
         <h2 class="mb-2">Nutrition <span class="text-accent">Planner</span></h2>
         <p class="mb-4 text-muted" style="max-width: 600px; margin: 0 auto 40px auto;">Your body is built in the
             kitchen. Input your stats below to calculate your required daily caloric intake for cutting or bulking.</p>
@@ -157,8 +172,23 @@
         <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
     </footer>
 
+    <!-- Coach Modal -->
+    <div id="coachModal" class="modal-overlay">
+        <div class="modal-content form-rugged" style="text-align: center; padding: 40px 30px;">
+            <span class="modal-close" id="closeCoachModal">&times;</span>
+            <div style="width: 180px; height: 180px; margin: 0 auto 25px auto; border-radius: 50%; overflow: hidden; border: 4px solid var(--accent); box-shadow: 0 0 30px rgba(255,215,0,0.3);">
+                <img src="coach1.jpg" alt="Coach Jomen Loyaga" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h2 style="color: var(--text-main); font-size: 2.2rem; margin-bottom: 10px; text-transform: uppercase;">Jomen <span class="text-accent">Loyaga</span></h2>
+            <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.7; margin-bottom: 35px;">
+                Coach Jomen is an exceptional personal trainer dedicated to helping you crush your fitness goals. With years of experience and an unbreakable passion for iron, he will forge you into your strongest self. 
+            </p>
+            <a href="https://www.facebook.com/Jahmen15" target="_blank" class="btn" style="width: 100%; font-size: 1.1rem;">Send Coach Jomen a Message!</a>
+        </div>
+    </div>
+
     <!-- Custom JS Document -->
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 
 </html>
