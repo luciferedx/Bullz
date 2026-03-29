@@ -26,12 +26,20 @@
             <a href="about.html">About Us</a>
             <a href="plans.html" class="active">Plans</a>
             <a href="calendar.html">Calendar</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </nav>
 
-    <div class="section text-center p-heading">
-        <h1 class="mb-2">Membership <span class="text-accent">Plans</span></h1>
-        <p class="mb-4 text-muted">Select the plan that best fits your beast mode. All plans give full access to premium equipment.</p>
+    <!-- Hero Banner -->
+    <div class="section hero" style="min-height: 40vh;">
+        <div class="hero-content" style="padding: 25px 40px;">
+            <h1 style="margin-bottom: 10px;">Membership <span class="text-accent">Plans</span></h1>
+            <p style="margin: 0; color: var(--text-muted);">Select the plan that best fits your beast mode. All plans give full access to premium equipment.</p>
+        </div>
+    </div>
+
+    <!-- Pricing Content -->
+    <div class="section text-center" style="min-height: auto; padding-top: 60px;">
         
         <div style="margin-bottom: 50px; text-align: center;">
             <div class="pricing-toggle tilt-card" style="padding: 15px 30px; display: inline-flex; margin-bottom: 15px;">
@@ -55,7 +63,7 @@
                     <li>Locker use included</li>
                     <li>Free body comp analysis</li>
                 </ul>
-                <a href="#" class="btn btn-outline" style="width: 100%;">Sign Up Now</a>
+                <a href="#" class="btn btn-outline signup-trigger" data-plan="Weekly Pass" style="width: 100%;">Sign Up Now</a>
             </div>
 
             <!-- Plan 2 (Monthly) -->
@@ -69,7 +77,7 @@
                     <li>Free body comp analysis</li>
                     <li>Guest pass (2x/month)</li>
                 </ul>
-                <a href="#" class="btn" style="width: 100%;">Sign Up Now</a>
+                <a href="#" class="btn signup-trigger" data-plan="Monthly Grind" style="width: 100%;">Sign Up Now</a>
             </div>
 
             <!-- Plan 3 (15 Days) -->
@@ -82,14 +90,53 @@
                     <li>Free body comp analysis</li>
                     <li>1 Personal Training Session</li>
                 </ul>
-                <a href="#" class="btn btn-outline" style="width: 100%;">Sign Up Now</a>
+                <a href="#" class="btn btn-outline signup-trigger" data-plan="15 Days Pass" style="width: 100%;">Sign Up Now</a>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <div class="social-links" style="display: flex; gap: 20px;">
+            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Facebook</a>
+            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Instagram</a>
+        </div>
+        <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
     </footer>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollmentModal" class="modal-overlay">
+        <div class="modal-content form-rugged">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <h2 class="mb-2" style="color: var(--text-main); font-size: 2rem;">Sign <span class="text-accent">Up</span></h2>
+            
+            <div style="background: rgba(0,0,0,0.5); border: 1px solid rgba(255,215,0,0.3); padding: 15px; margin-bottom: 25px; text-align: center;">
+                <p style="text-transform: uppercase; font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">Selected Plan</p>
+                <h3 id="modalPlanName" style="color: var(--accent); font-size: 1.5rem; margin: 0;">Plan Name</h3>
+                <p id="modalPlanPrice" style="font-size: 1.2rem; margin: 5px 0 0 0; font-weight: bold;">Price</p>
+            </div>
+
+            <!-- Formspree Endpoint -->
+            <form id="enrollmentForm" action="https://formspree.io/f/mwvwlnqo" method="POST">
+                <!-- Hidden inputs to send plan data -->
+                <input type="hidden" name="Selected Plan" id="hiddenPlanName" value="">
+                <input type="hidden" name="Quoted Price" id="hiddenPlanPrice" value="">
+                
+                <div class="form-group-rugged">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="form-group-rugged">
+                    <label>Mobile Number</label>
+                    <input type="tel" name="phone" placeholder="+63 9XX XXX XXXX" required>
+                </div>
+                <div class="form-group-rugged">
+                    <label>Address</label>
+                    <input type="text" name="address" placeholder="Your full local address" required>
+                </div>
+                <button type="submit" class="btn-rugged" style="margin-top: 10px;">Complete Enrollment</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

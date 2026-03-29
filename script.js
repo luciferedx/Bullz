@@ -204,4 +204,106 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 6. Plan Enrollment Modal Logic
+    const signupTriggers = document.querySelectorAll('.signup-trigger');
+    const enrollmentModal = document.getElementById('enrollmentModal');
+    
+    if (enrollmentModal && signupTriggers.length > 0) {
+        const closeModal = document.getElementById('closeModal');
+        const modalPlanName = document.getElementById('modalPlanName');
+        const modalPlanPrice = document.getElementById('modalPlanPrice');
+        const hiddenPlanName = document.getElementById('hiddenPlanName');
+        const hiddenPlanPrice = document.getElementById('hiddenPlanPrice');
+        
+        // Open Modal and Populate Data
+        signupTriggers.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const planName = btn.getAttribute('data-plan');
+                
+                // Traverse DOM to find the specific price element within the same card
+                const card = btn.closest('.plan-card');
+                const priceElement = card.querySelector('.price');
+                const priceValue = priceElement.innerText.trim();
+                
+                // Update UI
+                modalPlanName.innerText = planName;
+                modalPlanPrice.innerText = priceValue;
+                
+                // Update Hidden Inputs for Formspree
+                hiddenPlanName.value = planName;
+                hiddenPlanPrice.value = priceValue;
+                
+                // Show Modal
+                enrollmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+        
+        // Close Modal via X button
+        closeModal.addEventListener('click', () => {
+            enrollmentModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close Modal via clicking outside
+        enrollmentModal.addEventListener('click', (e) => {
+            if (e.target === enrollmentModal) {
+                enrollmentModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+
+        // Handle Form Submission smoothly via AJAX to prevent redirect
+        const enrollmentForm = document.getElementById('enrollmentForm');
+        if (enrollmentForm) {
+            enrollmentForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const btn = enrollmentForm.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                btn.innerText = 'PROCESSING...';
+                
+                const data = new FormData(enrollmentForm);
+
+                try {
+                    const response = await fetch(enrollmentForm.action, {
+                        method: enrollmentForm.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        btn.innerText = 'ENROLLMENT SECURED! 🤘';
+                        btn.style.background = '#FFD700';
+                        btn.style.color = '#000';
+                        btn.style.boxShadow = '0 10px 20px rgba(255, 215, 0, 0.4)';
+                        
+                        setTimeout(() => {
+                            btn.innerText = originalText;
+                            btn.style.background = '';
+                            btn.style.color = '';
+                            btn.style.boxShadow = '';
+                            enrollmentForm.reset();
+                            const modalToClose = document.getElementById('enrollmentModal');
+                            if(modalToClose) {
+                                modalToClose.classList.remove('active');
+                            }
+                            document.body.style.overflow = '';
+                        }, 1500);
+                    } else {
+                        btn.innerText = 'ERROR. TRY AGAIN.';
+                        setTimeout(() => btn.innerText = originalText, 2000);
+                    }
+                } catch (error) {
+                    btn.innerText = 'NETWORK ERROR.';
+                    setTimeout(() => btn.innerText = originalText, 2000);
+                }
+            });
+        }
+    }
+
 });

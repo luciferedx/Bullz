@@ -26,12 +26,20 @@
             <a href="about.html">About Us</a>
             <a href="plans.html">Plans</a>
             <a href="calendar.html" class="active">Calendar</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </nav>
 
-    <div class="section text-center p-heading">
-        <h1 class="mb-2">Gym <span class="text-accent">Schedule</span></h1>
-        <p class="mb-4 text-muted">View our available time slots and specialized training sessions for the week.</p>
+    <!-- Hero Banner -->
+    <div class="section hero" style="min-height: 40vh;">
+        <div class="hero-content" style="padding: 25px 40px;">
+            <h1 style="margin-bottom: 10px;">Gym <span class="text-accent">Schedule</span></h1>
+            <p style="margin: 0; color: var(--text-muted);">View our available time slots and specialized training sessions for the week.</p>
+        </div>
+    </div>
+
+    <!-- Calendar Content -->
+    <div class="section text-center" style="min-height: auto; padding-top: 60px;">
         
         <div class="calendar-container tilt-card">
             <div class="calendar-header">
@@ -62,8 +70,12 @@
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <div class="social-links" style="display: flex; gap: 20px;">
+            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Facebook</a>
+            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Instagram</a>
+        </div>
+        <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
     </footer>
 
     <script src="script.js"></script>

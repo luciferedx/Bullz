@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bull'z Fitness Gym</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Bull'z Logo" class="logo-img">
+            Bull'z <span>Gym</span>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="plans.html">Plans</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="contact.html" class="active">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <div class="section hero" style="min-height: 40vh;">
+        <div class="hero-content" style="padding: 25px 40px;">
+            <h1 style="margin-bottom: 10px;">Contact <span class="text-accent">Us</span></h1>
+            <p style="margin: 0; color: var(--text-muted);">Reach out, claim your free pass, or drop by. We're ready when you are.</p>
+        </div>
+    </div>
+
+    <!-- Contact Split Section -->
+    <div class="section" style="padding-top: 60px;">
+        <div class="contact-split" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1200px; margin: 0 auto; align-items: stretch;">
+            
+            <!-- Left Side: Map & Location -->
+            <div class="location-section" style="display: flex; flex-direction: column;">
+                <h2 class="mb-2 text-accent" style="font-size: 2rem;">Headquarters</h2>
+                <p class="mb-4 text-muted" style="max-width: 600px;">Located in the heart of Davao, perfectly engineered for accessibility so you have no excuses.</p>
+                
+                <a href="https://www.google.com/maps/dir/?api=1&destination=7.357097121086487,125.70716733990429"
+                    target="_blank" class="maps-wrapper tilt-card"
+                    style="display: block; position: relative; cursor: pointer; text-decoration: none; margin-bottom: 30px; height: 300px;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(5,5,5,0.4); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" class="map-overlay">
+                        <span class="btn" style="pointer-events: none;">Get Directions</span>
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15837.561498687258!2d125.7071673!3d7.3570971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1703649429188!5m2!1sen!2sph" style="pointer-events: none; width: calc(100% + 40px); height: calc(100% + 160px);" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </a>
+
+                <div class="location-info">
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                        <strong>Address:</strong><br>
+                        Gumamela St, Purok 6, Barangay Ising, <br>
+                        Municipality of Carmen, Davao del Norte, 8101
+                    </p>
+                    <ul class="hours-list" style="margin-top: 15px; padding-top: 15px;">
+                        <li>
+                            <span>Mon - Sat</span>
+                            <span>5:00 AM - 11:00 PM</span>
+                        </li>
+                        <li class="closed">
+                            <span>Sunday</span>
+                            <span>CLOSED (RECOVERY)</span>
+                        </li>
+                    </ul>
+
+                    <div class="social-connect" style="margin-top: 30px; border-top: 1px dashed rgba(255, 255, 255, 0.1); padding-top: 30px;">
+                        <h3 class="text-accent mb-2" style="font-size: 1.3rem;">Follow The Herd</h3>
+                        <div style="display: flex; gap: 30px; align-items: center;">
+                            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="display: flex; align-items: center; gap: 10px; color: var(--text-main); text-decoration: none; font-size: 1.1rem; font-weight: 600; font-family: 'Outfit', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V7.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                Facebook
+                            </a>
+                            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="display: flex; align-items: center; gap: 10px; color: var(--text-main); text-decoration: none; font-size: 1.1rem; font-weight: 600; font-family: 'Outfit', sans-serif; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Free Pass Form -->
+            <div class="free-trial-section" style="background: transparent; border: none; padding: 0;">
+                <h2 class="mb-2" style="color: var(--text-main);">Claim Your <span style="color: var(--accent-rugged);">Free 1-Day Pass</span></h2>
+                <p class="mb-4 text-muted">Experience the unmatched energy of Bull'z Gym for a full day. Enter your details below to instantly claim your pass.</p>
+
+                <div class="form-rugged" style="border-radius: 4px; padding: 40px;">
+                    <form id="freeTrialForm">
+                        <div class="form-group-rugged">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="e.g. John Doe" required>
+                        </div>
+                        <div class="form-group-rugged">
+                            <label>Phone Number (WhatsApp/Viber)</label>
+                            <input type="tel" placeholder="+63 9XX XXX XXXX" required>
+                        </div>
+                        <div class="form-group-rugged">
+                            <label>Current Fitness Goal</label>
+                            <select required>
+                                <option value="" disabled selected>Select Your Primary Goal</option>
+                                <option value="gain">Build Muscle / Bulk Up</option>
+                                <option value="lose">Lose Fat / Shred</option>
+                                <option value="strength">Increase Strength / Power</option>
+                                <option value="endurance">General Fitness & Endurance</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-rugged">Claim My Free Pass Now</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <div class="social-links" style="display: flex; gap: 20px;">
+            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Facebook</a>
+            <a href="https://www.facebook.com/BULLZFitnessGym" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Instagram</a>
+        </div>
+        <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Bull'z Fitness Gym. All rights reserved. Est 2015.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
