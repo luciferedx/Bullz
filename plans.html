@@ -33,13 +33,16 @@
         <h1 class="mb-2">Membership <span class="text-accent">Plans</span></h1>
         <p class="mb-4 text-muted">Select the plan that best fits your beast mode. All plans give full access to premium equipment.</p>
         
-        <div class="pricing-toggle tilt-card" style="padding: 15px 30px; display: inline-flex; margin-bottom: 50px;">
-            <span style="font-weight: 500;">Regular Rates</span>
-            <label class="switch">
-              <input type="checkbox" id="discountToggle">
-              <span class="slider"></span>
-            </label>
-            <span style="font-weight: 500; color: var(--accent);">Student / Senior 20% OFF</span>
+        <div style="margin-bottom: 50px; text-align: center;">
+            <div class="pricing-toggle tilt-card" style="padding: 15px 30px; display: inline-flex; margin-bottom: 15px;">
+                <span style="font-weight: 500;">Regular Rates</span>
+                <label class="switch">
+                  <input type="checkbox" id="discountToggle">
+                  <span class="slider"></span>
+                </label>
+                <span style="font-weight: 500; color: var(--accent);">Student / Senior 20% OFF</span>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic;">* Note: Must present a valid ID to claim the discount.</p>
         </div>
 
         <div class="pricing-grid">
@@ -55,9 +58,22 @@
                 <a href="#" class="btn btn-outline" style="width: 100%;">Sign Up Now</a>
             </div>
 
-            <!-- Plan 2 -->
+            <!-- Plan 2 (Monthly) -->
             <div class="tilt-card plan-card" style="border-color: rgba(255,215,0,0.5); position: relative;">
                 <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--bg-primary); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Most Popular</div>
+                <h3>Monthly Grind</h3>
+                <div class="price">₱<span id="price-month" class="dynamic-price" style="font-size:inherit; font-weight:inherit; color:inherit; margin:0;">1000</span><span>/ month</span></div>
+                <ul class="plan-features">
+                    <li>30 days full gym access</li>
+                    <li>Locker use included</li>
+                    <li>Free body comp analysis</li>
+                    <li>Guest pass (2x/month)</li>
+                </ul>
+                <a href="#" class="btn" style="width: 100%;">Sign Up Now</a>
+            </div>
+
+            <!-- Plan 3 (15 Days) -->
+            <div class="tilt-card plan-card">
                 <h3>15 Days Pass</h3>
                 <div class="price">₱<span id="price-15days" class="dynamic-price" style="font-size:inherit; font-weight:inherit; color:inherit; margin:0;">550</span><span>/ 15 days</span></div>
                 <ul class="plan-features">
@@ -65,19 +81,6 @@
                     <li>Locker use included</li>
                     <li>Free body comp analysis</li>
                     <li>1 Personal Training Session</li>
-                </ul>
-                <a href="#" class="btn" style="width: 100%;">Sign Up Now</a>
-            </div>
-
-            <!-- Plan 3 -->
-            <div class="tilt-card plan-card">
-                <h3>Monthly Grind</h3>
-                <div class="price">₱<span id="price-month" class="dynamic-price" style="font-size:inherit; font-weight:inherit; color:inherit; margin:0;">800</span><span>/ month</span></div>
-                <ul class="plan-features">
-                    <li>30 days full gym access</li>
-                    <li>Locker use included</li>
-                    <li>Free body comp analysis</li>
-                    <li>Guest pass (2x/month)</li>
                 </ul>
                 <a href="#" class="btn btn-outline" style="width: 100%;">Sign Up Now</a>
             </div>

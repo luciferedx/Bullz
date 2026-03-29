@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const rotateX = ((y - centerY) / centerY) * -10;
             const rotateY = ((x - centerX) / centerX) * 10;
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
         });
 
         card.addEventListener('mouseleave', () => {
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Base prices setup
         const perWeekBase = 230;
         const per15DaysBase = 550;
-        const perMonthBase = 800;
+        const perMonthBase = 1000;
 
         discountToggle.addEventListener('change', (e) => {
             const isDiscounted = e.target.checked;
